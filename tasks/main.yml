@@ -1,2 +1,7 @@
 ---
 # tasks file for ansible-role-chrome
+
+
+- include: setup-apt.yml
+  when: ansible_pkg_mgr == 'apt'
+
