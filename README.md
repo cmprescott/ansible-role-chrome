@@ -7,7 +7,7 @@ Installs Google Chrome.
 Requirements
 ------------
 
-- **Ansible**: Tested on 1.5.4+
+- **Ansible**: Tested on 1.4.4+
 - **apt**: python-apt (http://docs.ansible.com/apt_repository_module.html)
 
 Role Variables
