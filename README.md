@@ -1,5 +1,6 @@
 Ansible Role: Chrome
 =========
+[![Build Status](https://travis-ci.org/cmprescott/ansible-role-chrome.svg?branch=master)](https://travis-ci.org/cmprescott/ansible-role-chrome)
 
 Installs Google Chrome. 
 
