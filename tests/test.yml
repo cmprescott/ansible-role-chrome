@@ -1,0 +1,6 @@
+# test playbook
+
+- hosts: all
+  sudo: Yes
+  roles:
+    - role: ../..
