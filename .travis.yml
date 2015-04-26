@@ -7,6 +7,7 @@ before_install:
 install:
   - sudo apt-get install ansible
 script:
-  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check --list-tasks 
-  - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+  - ansible --version
+  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check --list-tasks -vvvv
+  - ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo -vvvv
   
