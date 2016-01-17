@@ -3,7 +3,7 @@ galaxy_info:
   author: Prescott Chris
   description: Installs Google chrome.
   license: BSD
-  min_ansible_version: 1.4.4
+  min_ansible_version: 1.9
   platforms:
   - name: Ubuntu
     versions:
@@ -14,6 +14,9 @@ galaxy_info:
     versions:
     - squeeze
     - wheezy
+  - name: Fedora
+    versions:
+    - 23
   categories:
   - networking
 dependencies: []

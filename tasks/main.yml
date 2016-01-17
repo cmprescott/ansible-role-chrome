@@ -5,3 +5,5 @@
 - include: setup-apt.yml
   when: ansible_pkg_mgr == 'apt'
 
+- include: setup-dnf.yml
+  when: ansible_pkg_mgr == 'dnf'
