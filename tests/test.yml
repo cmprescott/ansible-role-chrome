@@ -1,6 +1,6 @@
 # test playbook
 
 - hosts: all
-  sudo: Yes
+  become: yes
   roles:
     - role: ../..
