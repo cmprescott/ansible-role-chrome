@@ -7,7 +7,7 @@ Installs Google Chrome.
 Requirements
 ------------
 
-- **Ansible**: Tested on 1.4.4+
+- **Ansible**: Tested on 1.9.0.1+
 - **apt**: python-apt (http://docs.ansible.com/ansible/apt_module.html)
 - or **dnf**: python-dnf (http://docs.ansible.com/ansible/dnf_module.html)
 
