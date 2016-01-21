@@ -9,3 +9,4 @@ script:
   - ansible --version
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check --list-tasks -vvvv
   - ansible-playbook -i tests/inventory tests/test.yml --connection=local --become -vvvv
+...

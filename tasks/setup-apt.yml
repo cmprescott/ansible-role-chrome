@@ -12,3 +12,4 @@
 - name: "apt | ensure Google chrome present"
   apt: name=google-chrome-stable update_cache=yes
 
+...

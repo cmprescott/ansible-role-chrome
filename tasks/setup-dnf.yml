@@ -8,3 +8,4 @@
 - name: "dnf | ensure Google chrome present"
   dnf: name=google-chrome-stable
 
+...
