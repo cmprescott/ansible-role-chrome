@@ -4,10 +4,17 @@
 - name: "apt | ensure Google linux signing key present"
   apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
 
+- name: "apt | ensure previous repository for Google Chrome is absent, as Google removed the x86 distribution"
+  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=absent
 
-- name: "apt | ensure Google chrome repo present"
-  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present
+- name: "apt | ensure Google chrome repo present, using a workaround for missing x86 distribution"
+  copy:
+    content: "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main"
+    dest: "/etc/apt/sources.list.d/google-chrome.list"
+  register: google_repo
 
+- name: "apt | update cache"
+  apt: update_cache='{{ google_repo | changed }}'
   
 - name: "apt | ensure Google chrome present"
   apt: name=google-chrome-stable update_cache=yes
