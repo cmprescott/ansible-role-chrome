@@ -7,6 +7,5 @@
 
 - name: "dnf | ensure Google chrome present"
   dnf: name={{ chrome_package }}
-
 ...
 
