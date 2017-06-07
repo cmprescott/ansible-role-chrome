@@ -26,5 +26,6 @@
   apt: 
     name: "google-chrome-stable"
     update_cache: "yes"
+  ignore_errors: '{{ ansible_check_mode }}' # ignoring in --check, this will fail due to pre-reqs
 
 ...
