@@ -25,6 +25,7 @@
 - name: "apt | ensure Google chrome present"
   apt: 
     name: "google-chrome-stable"
+    state: "present"
     update_cache: "yes"
     cache_valid_time: "3600" # only update cache if it hasn't been updated in 1 hour
   ignore_errors: '{{ ansible_check_mode }}' # ignoring in --check, this will fail due to pre-reqs
