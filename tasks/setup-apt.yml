@@ -17,7 +17,7 @@
     dest: "/etc/apt/sources.list.d/google-chrome.list"
   register: google_repo
 
-- name: "apt | update cache"
+- name: "apt | update cache if the Google Chrome repo has been changed"
   apt: 
     update_cache: "yes"
   when: google_repo.changed
@@ -26,6 +26,7 @@
   apt: 
     name: "google-chrome-stable"
     update_cache: "yes"
+    cache_valid_time: "3600" # only update cache if it hasn't been updated in 1 hour
   ignore_errors: '{{ ansible_check_mode }}' # ignoring in --check, this will fail due to pre-reqs
 
 ...
