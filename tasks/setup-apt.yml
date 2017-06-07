@@ -2,10 +2,14 @@
 # via http://linuxg.net/how-to-install-google-chrome-42-stable-on-the-most-popular-linux-systems-via-the-official-google-repository/
 
 - name: "apt | ensure Google linux signing key present"
-  apt_key: url=https://dl-ssl.google.com/linux/linux_signing_key.pub state=present
+  apt_key: 
+    url: "https://dl-ssl.google.com/linux/linux_signing_key.pub"
+    state: "present"
 
 - name: "apt | ensure previous repository for Google Chrome is absent, as Google removed the x86 distribution"
-  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=absent
+  apt_repository: 
+    repo: 'deb http://dl.google.com/linux/chrome/deb/ stable main'
+    state: "absent"
 
 - name: "apt | ensure Google chrome repo present, using a workaround for missing x86 distribution"
   copy:
@@ -14,10 +18,13 @@
   register: google_repo
 
 - name: "apt | update cache"
-  apt: update_cache=yes
+  apt: 
+    update_cache: "yes"
   when: google_repo.changed
   
 - name: "apt | ensure Google chrome present"
-  apt: name=google-chrome-stable update_cache=yes
+  apt: 
+    name: "google-chrome-stable"
+    update_cache: "yes"
 
 ...
