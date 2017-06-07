@@ -1,11 +1,7 @@
 ---
 # tasks file for ansible-role-chrome
 
-
-- include: setup-apt.yml
+- include: "setup-{{ ansible_pkg_mgr }}.yml"
   when: ansible_pkg_mgr == 'apt'
-
-- include: setup-dnf.yml
-  when: ansible_pkg_mgr == 'dnf'
-
+        or ansible_pkg_mgr == 'dnf'
 ...
