@@ -6,6 +6,6 @@
         owner=root group=root mode=0644
 
 - name: "dnf | ensure Google chrome present"
-  dnf: name=google-chrome-stable
-
+  dnf: name={{ chrome_package }}
 ...
+

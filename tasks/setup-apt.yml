@@ -16,8 +16,7 @@
 - name: "apt | update cache"
   apt: update_cache=yes
   when: google_repo.changed
-  
-- name: "apt | ensure Google chrome present"
-  apt: name=google-chrome-stable update_cache=yes
 
+- name: "apt | ensure Google chrome present"
+  apt: name={{ chrome_package }} update_cache=yes
 ...
