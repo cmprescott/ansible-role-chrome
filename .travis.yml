@@ -6,7 +6,7 @@ dist: trusty
 before_install:
  - sudo apt-get update -qq
 install:
-  - pip install ansible==1.9.0.1
+  - pip install ansible
 script:
   - ansible --version
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check --list-tasks -vvvv
