@@ -3,7 +3,7 @@ galaxy_info:
   author: Prescott Chris
   description: Installs Google chrome.
   license: BSD
-  min_ansible_version: 1.9
+  min_ansible_version: 2.1
   platforms:
   - name: Ubuntu
     versions:
