@@ -14,7 +14,9 @@ Requirements
 Role Variables
 --------------
 
-None.
+```yaml
+chrome_latest_version: false
+```
 
 Dependencies
 ------------
