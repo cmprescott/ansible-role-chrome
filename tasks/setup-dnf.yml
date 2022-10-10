@@ -6,6 +6,8 @@
         owner=root group=root mode=0644
 
 - name: "dnf | ensure Google chrome present"
-  dnf: name={{ chrome_package }}
+  dnf:
+    name: "{{ chrome_package }}"
+    state: "{{ 'latest' if chrome_latest_version else 'present' }}"
 ...
 

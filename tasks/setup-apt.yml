@@ -14,4 +14,4 @@
 - name: "apt | ensure Google chrome present"
   apt:
     name: "{{ chrome_package }}"
-    state: present
+    state: "{{ 'latest' if chrome_latest_version else 'present' }}"
